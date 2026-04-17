@@ -2,8 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import { services, stats, industries, process } from "@/components/site/SiteData";
+import { services, stats, process } from "@/components/site/SiteData";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Marquee } from "@/components/site/Marquee";
@@ -42,15 +41,18 @@ function HomePage() {
         className="relative overflow-hidden ink-card"
         style={{ minHeight: "92vh" }}
       >
-        <motion.img
-          src={heroImg}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+        {/* Animated background — no image */}
+        <motion.div
+          aria-hidden
+          className="absolute inset-0"
           style={{ y }}
-          width={1920}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/60 to-ink" aria-hidden />
+        >
+          <div className="absolute inset-0 blueprint-grid opacity-30" />
+          <div className="absolute -top-40 -left-32 h-[36rem] w-[36rem] rounded-full bg-saffron/30 blur-[120px] float-slow" />
+          <div className="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-amber-glow/25 blur-[140px] float-slow" style={{ animationDelay: "-3s" }} />
+          <div className="absolute bottom-0 left-1/3 h-[28rem] w-[28rem] rounded-full bg-emerald-deep/30 blur-[120px] float-slow" style={{ animationDelay: "-5s" }} />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/40 to-ink" aria-hidden />
         <motion.div
           className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-32"
           style={{ opacity }}
@@ -202,43 +204,14 @@ function HomePage() {
         </div>
       </section>
 
-      {/* INDUSTRIES */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              ◇ 03 — Industries
-            </p>
-            <h2 className="mt-4 font-display text-5xl md:text-6xl font-medium leading-[1]">
-              Industries we serve
-            </h2>
-          </Reveal>
-          <Link to="/industries" className="text-sm font-semibold underline-grow">
-            All industries →
-          </Link>
-        </div>
-        <div className="mt-12 grid gap-px bg-border md:grid-cols-5">
-          {industries.map((ind, i) => (
-            <Reveal key={ind.name} delay={i * 0.06}>
-              <div className="group h-full bg-background p-8 transition-colors hover:bg-foreground hover:text-background">
-                <p className="font-mono text-xs text-muted-foreground group-hover:text-amber-glow">
-                  0{i + 1}
-                </p>
-                <h3 className="mt-4 font-display text-2xl font-medium">{ind.name}</h3>
-                <p className="mt-3 text-xs text-muted-foreground group-hover:text-paper/70">{ind.note}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
+      {/* (Industries section removed) */}
       {/* PROCESS */}
       <section className="ink-card relative overflow-hidden py-24 md:py-32">
         <div className="absolute inset-0 blueprint-grid opacity-25" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-widest text-amber-glow">
-              ◇ 04 — Process
+              ◇ 03 — Process
             </p>
             <h2 className="mt-4 font-display text-5xl md:text-7xl font-medium leading-[0.98] text-paper text-balance">
               A process built to <span className="italic text-amber-glow">not waste your quarter.</span>
