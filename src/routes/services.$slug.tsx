@@ -66,7 +66,7 @@ function ServiceDetail() {
           </div>
           <div className="md:col-span-7">
             <ul className="divide-y divide-border border-y border-border">
-              {service.bullets.map((b, i) => (
+              {service.bullets.map((b: string, i: number) => (
                 <Reveal key={b} delay={i * 0.08}>
                   <li className="flex items-start gap-6 py-6">
                     <span className="font-mono text-xs text-saffron mt-1">0{i + 1}</span>
