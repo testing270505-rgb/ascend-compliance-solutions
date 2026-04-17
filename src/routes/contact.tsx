@@ -7,9 +7,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Vision Consultancy — Phone, Email, Office, Quick Form" },
-      { name: "description", content: "Reach Vision Consultancy in New Delhi and Mumbai. Phone, email, office address and a quick contact form." },
+      {
+        name: "description",
+        content:
+          "Reach Vision Consultancy in New Delhi and Mumbai. Phone, email, office address and a quick contact form.",
+      },
       { property: "og:title", content: "Contact — Vision Consultancy" },
-      { property: "og:description", content: "Get a free regulatory assessment for the Indian market." },
+      {
+        property: "og:description",
+        content: "Get a free regulatory assessment for the Indian market.",
+      },
     ],
   }),
   component: ContactPage,
@@ -28,8 +35,8 @@ function ContactPage() {
             Tell us about your <span className="italic text-saffron">product.</span>
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground text-lg">
-            Send a few details and we'll respond within one working day with a
-            tailored regulatory route.
+            Send a few details and we'll respond within one working day with a tailored regulatory
+            route.
           </p>
         </div>
       </section>
@@ -41,7 +48,9 @@ function ContactPage() {
             <div className="flex items-start gap-4">
               <Phone className="h-5 w-5 text-saffron mt-1" />
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Phone</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  Phone
+                </p>
                 <p className="mt-1 font-display text-2xl">+91 98 1000 0000</p>
               </div>
             </div>
@@ -50,8 +59,10 @@ function ContactPage() {
             <div className="flex items-start gap-4">
               <Mail className="h-5 w-5 text-saffron mt-1" />
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Email</p>
-                <p className="mt-1 font-display text-2xl">hello@visionconsult.in</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  Email
+                </p>
+                <p className="mt-1 font-display text-2xl">sales@visionconsultants.co</p>
               </div>
             </div>
           </Reveal>
@@ -59,9 +70,13 @@ function ContactPage() {
             <div className="flex items-start gap-4">
               <MapPin className="h-5 w-5 text-saffron mt-1" />
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Offices</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  Offices
+                </p>
                 <p className="mt-1 font-display text-xl">New Delhi · Mumbai, India</p>
-                <p className="mt-1 text-sm text-muted-foreground">Head office: Connaught Place, New Delhi 110001</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Head office: Connaught Place, New Delhi 110001
+                </p>
               </div>
             </div>
           </Reveal>
@@ -91,7 +106,9 @@ function ContactPage() {
               {sent ? (
                 <div className="py-12 text-center">
                   <p className="font-display text-3xl">Thanks — we got it.</p>
-                  <p className="mt-3 text-muted-foreground">We'll respond within one working day.</p>
+                  <p className="mt-3 text-muted-foreground">
+                    We'll respond within one working day.
+                  </p>
                 </div>
               ) : (
                 <>
