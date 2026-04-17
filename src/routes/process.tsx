@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { process } from "@/components/site/SiteData";
+import { processSteps } from "@/components/site/SiteData";
 import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/process")({
@@ -30,7 +30,7 @@ function ProcessPage() {
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="space-y-px bg-border">
-          {process.map((p, i) => (
+          {processSteps.map((p, i) => (
             <Reveal key={p.step} delay={i * 0.1}>
               <div className="group grid gap-8 bg-background p-8 md:p-12 md:grid-cols-12 transition-colors hover:bg-foreground hover:text-background">
                 <div className="md:col-span-3">

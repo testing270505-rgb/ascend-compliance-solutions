@@ -99,7 +99,7 @@ export const stats = [
   { value: 6, suffix: "", label: "Core regulatory verticals" },
 ];
 
-export const process = [
+export const processSteps = [
   {
     step: "01",
     title: "Consultation",
