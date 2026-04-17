@@ -92,14 +92,6 @@ export const services = [
   },
 ];
 
-export const industries = [
-  { name: "Electronics", note: "BIS CRS, EMI/EMC, WPC, TEC" },
-  { name: "Food", note: "FSSAI registration & licensing" },
-  { name: "Cosmetics", note: "CDSCO import & manufacturing" },
-  { name: "Manufacturing", note: "ISO, BEE, BIS ISI marks" },
-  { name: "Startups", note: "Make-in-India market entry" },
-];
-
 export const stats = [
   { value: 12, suffix: "+", label: "Years of experience" },
   { value: 850, suffix: "+", label: "Clients across 14 countries" },
