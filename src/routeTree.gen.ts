@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
-import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -28,11 +27,6 @@ const ServicesRoute = ServicesRouteImport.update({
 const ProcessRoute = ProcessRouteImport.update({
   id: '/process',
   path: '/process',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndustriesRoute = IndustriesRouteImport.update({
-  id: '/industries',
-  path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -77,7 +71,6 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -89,7 +82,6 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -102,7 +94,6 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
@@ -116,7 +107,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/case-studies'
     | '/contact'
-    | '/industries'
     | '/process'
     | '/services'
     | '/blog/$slug'
@@ -128,7 +118,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/case-studies'
     | '/contact'
-    | '/industries'
     | '/process'
     | '/services'
     | '/blog/$slug'
@@ -140,7 +129,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/case-studies'
     | '/contact'
-    | '/industries'
     | '/process'
     | '/services'
     | '/blog/$slug'
@@ -153,7 +141,6 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
-  IndustriesRoute: typeof IndustriesRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRouteWithChildren
 }
@@ -172,13 +159,6 @@ declare module '@tanstack/react-router' {
       path: '/process'
       fullPath: '/process'
       preLoaderRoute: typeof ProcessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/industries': {
-      id: '/industries'
-      path: '/industries'
-      fullPath: '/industries'
-      preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -261,7 +241,6 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
-  IndustriesRoute: IndustriesRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRouteWithChildren,
 }
