@@ -52,14 +52,27 @@ export const services = [
     ],
   },
   {
-    slug: "nabl-emi-emc",
-    code: "05",
-    name: "NABL / EMI EMC",
-    title: "NABL-Accredited Testing — Electrical, EMI/EMC, Drone, Battery",
+    slug: "emi-emc",
+    code: "04",
+    name: "EMI / EMC",
+    title: "EMI / EMC Testing & Compliance",
     short:
-      "Globally accepted accredited testing for safety, EMI/EMC, performance, environmental and tender compliance.",
+      "Electromagnetic interference and compatibility testing to ensure your product co-exists safely with other electronics in the field.",
     bullets: [
-      "Electrical safety & EMI/EMC testing",
+      "Radiated & conducted emissions testing",
+      "Immunity (ESD, surge, EFT, RF) evaluations",
+      "Pre-compliance debugging & design fixes",
+    ],
+  },
+  {
+    slug: "nabl-testing",
+    code: "05",
+    name: "NABL Testing",
+    title: "NABL-Accredited Testing — Electrical, Drone, Battery",
+    short:
+      "Globally accepted accredited testing for safety, performance, environmental and tender compliance.",
+    bullets: [
+      "Electrical safety, performance & reliability",
       "Drone (UAV), battery & environmental testing",
       "Pre-compliance & documentation support",
     ],
