@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { services, stats, process } from "@/components/site/SiteData";
+import { services, stats, processSteps } from "@/components/site/SiteData";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Marquee } from "@/components/site/Marquee";
@@ -218,7 +218,7 @@ function HomePage() {
             </h2>
           </Reveal>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {process.map((p, i) => (
+            {processSteps.map((p, i) => (
               <Reveal key={p.step} delay={i * 0.12}>
                 <div className="relative">
                   <div className="font-display text-7xl font-bold text-amber-glow/30">{p.step}</div>
