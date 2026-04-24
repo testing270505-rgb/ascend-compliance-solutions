@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/components/site/SiteData";
 import { Reveal } from "@/components/site/Reveal";
@@ -13,13 +13,23 @@ export const Route = createFileRoute("/services")({
           "Six regulatory verticals: BIS CRS, BEE, WPC/ETA, TEC MTCTE, NABL testing, Trademark & ISO certification.",
       },
       { property: "og:title", content: "Services — Vision Consultancy" },
-      { property: "og:description", content: "BIS, BEE, WPC, TEC, NABL, ISO and trademark services for the Indian market." },
+      {
+        property: "og:description",
+        content: "BIS, BEE, WPC, TEC, NABL, ISO and trademark services for the Indian market.",
+      },
     ],
   }),
-  component: ServicesPage,
+  component: ServicesLayout,
 });
 
-function ServicesPage() {
+function ServicesLayout() {
+  const matchRoute = useMatchRoute();
+  const isChildRoute = matchRoute({ to: "/services/$slug" });
+
+  if (isChildRoute) {
+    return <Outlet />;
+  }
+
   return (
     <>
       <section className="border-b border-border">
@@ -31,8 +41,8 @@ function ServicesPage() {
             Certifications, compliance & <span className="italic text-saffron">licensing.</span>
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground text-lg">
-            Six tightly-focused practices that cover every mandatory approval
-            your product needs to enter and grow in India.
+            Six tightly-focused practices that cover every mandatory approval your product needs to
+            enter and grow in India.
           </p>
         </div>
       </section>

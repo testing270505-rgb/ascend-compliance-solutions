@@ -33,12 +33,16 @@ export const Route = createFileRoute("/services/$slug")({
 function ServiceDetail() {
   const { service } = Route.useLoaderData() as { service: Service };
   const others = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+
   return (
     <>
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Link to="/services" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          >
             <ArrowLeft className="h-4 w-4" /> All services
           </Link>
           <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -59,7 +63,9 @@ function ServiceDetail() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Reveal>
-              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">◇ Overview</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                ◇ Overview
+              </p>
               <h2 className="mt-4 font-display text-3xl md:text-4xl">What this is</h2>
             </Reveal>
           </div>
@@ -76,14 +82,18 @@ function ServiceDetail() {
       {/* Core pillars */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">◇ How we deliver</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            ◇ How we deliver
+          </p>
           <h2 className="mt-4 font-display text-3xl md:text-5xl">Core service pillars</h2>
           <div className="mt-12 grid gap-px bg-border md:grid-cols-3">
             {service.pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
                 <div className="h-full bg-background p-8 md:p-10">
                   <span className="font-mono text-xs text-saffron">0{i + 1}</span>
-                  <h3 className="mt-6 font-display text-2xl md:text-3xl leading-tight">{p.title}</h3>
+                  <h3 className="mt-6 font-display text-2xl md:text-3xl leading-tight">
+                    {p.title}
+                  </h3>
                   <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.body}</p>
                 </div>
               </Reveal>
@@ -97,8 +107,12 @@ function ServiceDetail() {
         <section className="border-b border-border bg-secondary">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid gap-12 md:grid-cols-12">
             <div className="md:col-span-4">
-              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">◇ Coverage</p>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">Products we cover</h2>
+              <Reveal>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  ◇ Coverage
+                </p>
+                <h2 className="mt-4 font-display text-3xl md:text-4xl">Products we cover</h2>
+              </Reveal>
             </div>
             <div className="md:col-span-8">
               <ul className="grid gap-3 sm:grid-cols-2">
@@ -120,7 +134,9 @@ function ServiceDetail() {
       {service.benefits && (
         <section className="border-b border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">◇ Why it matters</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              ◇ Why it matters
+            </p>
             <h2 className="mt-4 font-display text-3xl md:text-5xl">Key benefits</h2>
             <div className="mt-10 overflow-hidden rounded-xl border border-border">
               <div className="grid grid-cols-3 bg-foreground text-background font-mono text-xs uppercase tracking-widest">
@@ -128,7 +144,10 @@ function ServiceDetail() {
                 <div className="p-4 col-span-2">Impact</div>
               </div>
               {service.benefits.map((b, i) => (
-                <div key={b.feature} className={`grid grid-cols-3 ${i !== 0 ? "border-t border-border" : ""}`}>
+                <div
+                  key={b.feature}
+                  className={`grid grid-cols-3 ${i !== 0 ? "border-t border-border" : ""}`}
+                >
                   <div className="p-5 font-display text-lg">{b.feature}</div>
                   <div className="p-5 col-span-2 text-muted-foreground">{b.impact}</div>
                 </div>
@@ -138,15 +157,102 @@ function ServiceDetail() {
         </section>
       )}
 
-      {/* What we deliver bullets */}
+      {/* Validity / Key Facts */}
+      {service.validity && (
+        <section className="border-b border-border bg-secondary">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+            <Reveal>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                ◇ Key facts
+              </p>
+              <h2 className="mt-4 font-display text-3xl md:text-5xl">Certificate details</h2>
+            </Reveal>
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {service.validity.map((v, i) => (
+                <Reveal key={v.label} delay={i * 0.07}>
+                  <div className="rounded-xl border border-border bg-background p-6">
+                    <p className="font-mono text-xs uppercase tracking-widest text-saffron">
+                      {v.label}
+                    </p>
+                    <p className="mt-3 font-display text-2xl leading-tight">{v.value}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQs */}
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="border-b border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid gap-12 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <Reveal>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  ◇ Common questions
+                </p>
+                <h2 className="mt-4 font-display text-3xl md:text-4xl">FAQs</h2>
+              </Reveal>
+            </div>
+            <div className="md:col-span-8 space-y-6">
+              {service.faqs.map((faq, i) => (
+                <Reveal key={i} delay={i * 0.06}>
+                  <div className="rounded-xl border border-border p-6">
+                    <p className="font-display text-lg font-medium">{faq.q}</p>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why Vision */}
+      {service.whyUs && service.whyUs.length > 0 && (
+        <section className="border-b border-border ink-card relative overflow-hidden">
+          <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+            <Reveal>
+              <p className="font-mono text-xs uppercase tracking-widest text-amber-glow">
+                ◇ Why Vision
+              </p>
+              <h2 className="mt-4 font-display text-3xl md:text-5xl text-paper">
+                Why partner with us?
+              </h2>
+            </Reveal>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {service.whyUs.map((w, i) => {
+                const colonIdx = w.indexOf(":");
+                const label = colonIdx > -1 ? w.slice(0, colonIdx) : w;
+                const body = colonIdx > -1 ? w.slice(colonIdx + 1).trim() : "";
+                return (
+                  <Reveal key={i} delay={i * 0.08}>
+                    <div className="rounded-xl border border-paper/15 bg-paper/5 p-7">
+                      <p className="font-display text-xl text-amber-glow">{label}</p>
+                      {body && <p className="mt-3 text-sm text-paper/75">{body}</p>}
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* What we deliver */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
-              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">◇ Engagement</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                ◇ Engagement
+              </p>
               <h2 className="mt-4 font-display text-3xl md:text-4xl">What we deliver</h2>
               <p className="mt-4 text-muted-foreground">
-                A focused execution plan that gets your product registered, on shelf and in customer hands — fast.
+                A focused execution plan that gets your product registered, on shelf and in customer
+                hands — fast.
               </p>
               <Link
                 to="/contact"
@@ -174,7 +280,9 @@ function ServiceDetail() {
       {/* Related services */}
       <section className="bg-secondary py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Related</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Related
+          </p>
           <h3 className="mt-4 font-display text-3xl md:text-4xl">Other services</h3>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {others.map((o) => (

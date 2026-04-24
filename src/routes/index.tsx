@@ -110,7 +110,7 @@ function HomePage() {
           </motion.div>
         </motion.div>
 
-        {/* Floating stat strip */}
+        {/*Floating stat strip */}
         {/*<div className="relative border-t border-paper/15 bg-ink/80 backdrop-blur">*/}
         {/*  <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-paper/10 md:grid-cols-4">*/}
         {/*    {stats.map((s) => (*/}
