@@ -66,7 +66,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-paper/15 pt-6 text-xs text-paper/50 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Vision Consultancy. All rights reserved.</p>
           <p className="font-mono">
-            Millennium Business Park, Mahape, Navi Mumbai – 400710 · CIN under Companies Act, 2013
+            Millennium Business Park, Mahape, Navi Mumbai – 400710 · CIN under Companies Act
           </p>
         </div>
       </div>

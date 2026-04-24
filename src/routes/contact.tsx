@@ -82,10 +82,10 @@ function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="overflow-hidden rounded-xl border border-border aspect-[4/3]">
+            <div className="overflow-hidden rounded-xl border border-border aspect-4/3">
               <iframe
                 title="Office map"
-                src="https://www.google.com/maps?q=Connaught+Place,+New+Delhi&output=embed"
+                src="https://www.google.com/maps?q=Millennium+Business+Park,+Mahape,+Navi+Mumbai&output=embed"
                 className="h-full w-full"
                 loading="lazy"
               />

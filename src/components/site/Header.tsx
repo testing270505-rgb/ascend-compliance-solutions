@@ -18,12 +18,25 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="grid h-8 w-8 place-items-center rounded-sm bg-foreground text-background font-display text-lg font-bold transition-transform group-hover:rotate-3">
-            V
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight">
-            Vision<span className="text-accent">.</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          {/*Logo*/}
+          <img
+            src="/src/images/logo/VC3.png"
+            className="h-14 w-auto object-contain mix-blend-multiply"
+            alt=""
+          />
+          {/*<span className="grid h-8 w-8 place-items-center rounded-sm bg-foreground text-background font-display text-lg font-bold transition-transform group-hover:rotate-3">*/}
+          {/*  V*/}
+          {/*</span>*/}
+          {/*Brand Name*/}
+          {/*<span className="font-display text-lg font-semibold tracking-tight">*/}
+          {/*  <span className="bg-linear-to-r from-[#06192D] via-[#0B2D4D] to-[#F5A623] bg-clip-text text-transparent">*/}
+          {/*    Vision*/}
+          {/*  </span>{" "}*/}
+          {/*  <span className="text-[#F5A623] italic">Consultancy</span>*/}
+          {/*</span>*/}
+          <span className="font-display text-lg font-semibold tracking-tight bg-linear-to-r from-[#06192D] via-[#0B2D4D] to-[#F5A623] bg-clip-text text-transparent">
+            Vision Consultancy
           </span>
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
@@ -46,11 +59,7 @@ export function Header() {
         >
           Get a quote →
         </Link>
-        <button
-          aria-label="Menu"
-          className="lg:hidden p-2"
-          onClick={() => setOpen((v) => !v)}
-        >
+        <button aria-label="Menu" className="lg:hidden p-2" onClick={() => setOpen((v) => !v)}>
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>

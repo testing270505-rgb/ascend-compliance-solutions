@@ -38,15 +38,14 @@ function HomePage() {
       <section
         ref={heroRef}
         className="relative overflow-hidden ink-card"
-        style={{ minHeight: "92vh" }}
+        style={{ minHeight: "75vh" }}
       >
-        {/* Animated background — no image */}
         <motion.div aria-hidden className="absolute inset-0" style={{ y }}>
           <div className="absolute inset-0 blueprint-grid opacity-30" />
           <div className="absolute -top-40 -left-32 h-144 w-xl rounded-full bg-saffron/30 blur-[120px] float-slow" />
           <div
             className="absolute top-1/3 -right-40 h-128 w-lg rounded-full bg-amber-glow/25 blur-[140px] float-slow"
-            style={{ animationDelay: "-3s" }}
+            style={{ animationDelay: "-5s" }}
           />
           <div
             className="absolute bottom-0 left-1/3 h-112 w-md rounded-full bg-emerald-deep/30 blur-[120px] float-slow"
@@ -67,7 +66,7 @@ function HomePage() {
             transition={{ duration: 0.6 }}
             className="font-mono text-xs uppercase tracking-[0.25em] text-amber-glow"
           >
-            ◢ Regulatory · Compliance · Licensing — since 2013
+            ◢ Regulatory · Compliance · Licensing
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -229,7 +228,7 @@ function HomePage() {
               <span className="italic text-amber-glow">not waste your quarter.</span>
             </h2>
           </Reveal>
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((p, i) => (
               <Reveal key={p.step} delay={i * 0.12}>
                 <div className="relative">
