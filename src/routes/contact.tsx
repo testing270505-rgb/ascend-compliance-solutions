@@ -75,7 +75,7 @@ function ContactPage() {
                 </p>
                 <p className="mt-1 font-display text-xl">New Delhi · Mumbai, India</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Head office: Connaught Place, New Delhi 110001
+                  Head office: Millennium Business Park, Mahape, Navi Mumbai – 400710
                 </p>
               </div>
             </div>

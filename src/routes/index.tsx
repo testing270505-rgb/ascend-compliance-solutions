@@ -5,7 +5,6 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { services, stats, processSteps } from "@/components/site/SiteData";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-import { Marquee } from "@/components/site/Marquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,17 +41,22 @@ function HomePage() {
         style={{ minHeight: "92vh" }}
       >
         {/* Animated background — no image */}
-        <motion.div
-          aria-hidden
-          className="absolute inset-0"
-          style={{ y }}
-        >
+        <motion.div aria-hidden className="absolute inset-0" style={{ y }}>
           <div className="absolute inset-0 blueprint-grid opacity-30" />
-          <div className="absolute -top-40 -left-32 h-[36rem] w-[36rem] rounded-full bg-saffron/30 blur-[120px] float-slow" />
-          <div className="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-amber-glow/25 blur-[140px] float-slow" style={{ animationDelay: "-3s" }} />
-          <div className="absolute bottom-0 left-1/3 h-[28rem] w-[28rem] rounded-full bg-emerald-deep/30 blur-[120px] float-slow" style={{ animationDelay: "-5s" }} />
+          <div className="absolute -top-40 -left-32 h-144 w-xl rounded-full bg-saffron/30 blur-[120px] float-slow" />
+          <div
+            className="absolute top-1/3 -right-40 h-128 w-lg rounded-full bg-amber-glow/25 blur-[140px] float-slow"
+            style={{ animationDelay: "-3s" }}
+          />
+          <div
+            className="absolute bottom-0 left-1/3 h-112 w-md rounded-full bg-emerald-deep/30 blur-[120px] float-slow"
+            style={{ animationDelay: "-5s" }}
+          />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/40 to-ink" aria-hidden />
+        <div
+          className="absolute inset-0 bg-linear-to-b from-transparent via-ink/40 to-ink"
+          aria-hidden
+        />
         <motion.div
           className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-32"
           style={{ opacity }}
@@ -81,9 +85,8 @@ function HomePage() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-8 max-w-xl text-lg text-paper/75 text-pretty"
           >
-            Vision is the single-window partner that takes your product through
-            BIS, BEE, WPC, TEC, NABL, ISO and trademark approvals — without the
-            usual paperwork purgatory.
+            Vision is the single-window partner that takes your product through BIS, BEE, WPC, TEC,
+            NABL, ISO and trademark approvals — without the usual paperwork purgatory.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -108,23 +111,19 @@ function HomePage() {
         </motion.div>
 
         {/* Floating stat strip */}
-        <div className="relative border-t border-paper/15 bg-ink/80 backdrop-blur">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-paper/10 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-ink px-6 py-8">
-                <p className="font-display text-4xl md:text-5xl text-amber-glow">
-                  <Counter to={s.value} suffix={s.suffix} />
-                </p>
-                <p className="mt-2 text-xs uppercase tracking-widest text-paper/60">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/*<div className="relative border-t border-paper/15 bg-ink/80 backdrop-blur">*/}
+        {/*  <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-paper/10 md:grid-cols-4">*/}
+        {/*    {stats.map((s) => (*/}
+        {/*      <div key={s.label} className="bg-ink px-6 py-8">*/}
+        {/*        <p className="font-display text-4xl md:text-5xl text-amber-glow">*/}
+        {/*          <Counter to={s.value} suffix={s.suffix} />*/}
+        {/*        </p>*/}
+        {/*        <p className="mt-2 text-xs uppercase tracking-widest text-paper/60">{s.label}</p>*/}
+        {/*      </div>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </section>
-
-      <Marquee items={["BIS CRS", "BEE Star", "WPC ETA", "TEC MTCTE", "NABL", "ISO 9001", "Trademark", "FSSAI"]} />
 
       {/* SERVICES */}
       <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -134,14 +133,14 @@ function HomePage() {
               <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 ◇ 01 — Services
               </p>
-              <h2 className="mt-4 font-display text-5xl md:text-6xl font-medium leading-[1] text-balance">
+              <h2 className="mt-4 font-display text-5xl md:text-6xl font-medium leading-none text-balance">
                 Six verticals.
                 <br />
                 <span className="italic text-saffron">One door.</span>
               </h2>
               <p className="mt-6 text-muted-foreground max-w-md">
-                Every Indian regulatory approval your product needs to enter the
-                market — handled by specialists who do this every day.
+                Every Indian regulatory approval your product needs to enter the market — handled by
+                specialists who do this every day.
               </p>
               <Link
                 to="/services"
@@ -188,10 +187,22 @@ function HomePage() {
           </Reveal>
           <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { t: "12+ years deep", d: "Built specifically around India's BIS, WPC and BEE frameworks — not a general law firm." },
-              { t: "850+ clients", d: "From Fortune 500 electronics OEMs to D2C startups across 14 countries." },
-              { t: "98% first-pass", d: "Dossiers built to clear the Bureau on first review — no costly resubmissions." },
-              { t: "Specialist team", d: "Practice leads dedicated to each vertical. You always speak to someone who's done it before." },
+              {
+                t: "12+ years deep",
+                d: "Built specifically around India's BIS, WPC and BEE frameworks — not a general law firm.",
+              },
+              {
+                t: "850+ clients",
+                d: "From Fortune 500 electronics OEMs to D2C startups across 14 countries.",
+              },
+              {
+                t: "98% first-pass",
+                d: "Dossiers built to clear the Bureau on first review — no costly resubmissions.",
+              },
+              {
+                t: "Specialist team",
+                d: "Practice leads dedicated to each vertical. You always speak to someone who's done it before.",
+              },
             ].map((b, i) => (
               <Reveal key={b.t} delay={i * 0.08}>
                 <div className="group h-full rounded-xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-saffron hover:shadow-[0_20px_60px_-30px_var(--saffron)]">
@@ -214,7 +225,8 @@ function HomePage() {
               ◇ 03 — Process
             </p>
             <h2 className="mt-4 font-display text-5xl md:text-7xl font-medium leading-[0.98] text-paper text-balance">
-              A process built to <span className="italic text-amber-glow">not waste your quarter.</span>
+              A process built to{" "}
+              <span className="italic text-amber-glow">not waste your quarter.</span>
             </h2>
           </Reveal>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -235,13 +247,16 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <Reveal>
           <div className="rounded-3xl bg-secondary p-10 md:p-16 relative overflow-hidden">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-saffron/30 blur-3xl float-slow" aria-hidden />
+            <div
+              className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-saffron/30 blur-3xl float-slow"
+              aria-hidden
+            />
             <div className="relative grid gap-8 md:grid-cols-2 md:items-end">
               <div>
                 <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   Talk to us
                 </p>
-                <h2 className="mt-4 font-display text-4xl md:text-5xl font-medium leading-[1] text-balance">
+                <h2 className="mt-4 font-display text-4xl md:text-5xl font-medium leading-none text-balance">
                   Tell us about your product. We'll map the route to market.
                 </h2>
               </div>

@@ -7,9 +7,16 @@ export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
       { title: "Resources — BIS, ISO, FSSAI guides | Vision Consultancy" },
-      { name: "description", content: "Plain-English guides to Indian regulatory processes: BIS certification, ISO cost, FSSAI registration." },
+      {
+        name: "description",
+        content:
+          "Plain-English guides to Indian regulatory processes: BIS certification, ISO cost, FSSAI registration.",
+      },
       { property: "og:title", content: "Resources & Guides — Vision Consultancy" },
-      { property: "og:description", content: "Practical, current guides to BIS, ISO and FSSAI processes in India." },
+      {
+        property: "og:description",
+        content: "Practical, current guides to BIS, ISO and FSSAI processes in India.",
+      },
     ],
   }),
   component: BlogPage,
@@ -44,12 +51,17 @@ function BlogPage() {
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-saffron">{p.category}</span>
-                  <span className="font-mono text-xs text-muted-foreground group-hover:text-paper/60">{p.read}</span>
+                  <span className="font-mono text-xs text-muted-foreground group-hover:text-paper/60">
+                    {p.read}
+                  </span>
                 </div>
                 <h2 className="mt-8 font-display text-2xl md:text-3xl leading-tight">{p.title}</h2>
-                <p className="mt-4 text-sm text-muted-foreground group-hover:text-paper/75 flex-1">{p.excerpt}</p>
+                <p className="mt-4 text-sm text-muted-foreground group-hover:text-paper/75 flex-1">
+                  {p.excerpt}
+                </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
-                  Read article <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+                  Read article{" "}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
                 </div>
               </Link>
             </Reveal>

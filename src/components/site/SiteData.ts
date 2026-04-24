@@ -43,7 +43,13 @@ export const services: Service[] = [
         body: "We draft and organise all necessary technical dossiers, ensuring 100% alignment with relevant Indian Standards (IS) to prevent delays or rejections.",
       },
     ],
-    coverage: ["LED & Luminous products", "Batteries (Li-ion & sealed)", "UPS systems", "Solar Inverters", "IT & consumer electronics"],
+    coverage: [
+      "LED & Luminous products",
+      "Batteries (Li-ion & sealed)",
+      "UPS systems",
+      "Solar Inverters",
+      "IT & consumer electronics",
+    ],
   },
   {
     slug: "bee",
@@ -77,9 +83,18 @@ export const services: Service[] = [
       },
     ],
     benefits: [
-      { feature: "Consumer Trust", impact: "Recognisable branding that builds confidence in product quality." },
-      { feature: "Cost Savings", impact: "Direct reduction in monthly utility expenses for households." },
-      { feature: "Eco-Friendly", impact: "Significant contribution to India's carbon reduction goals." },
+      {
+        feature: "Consumer Trust",
+        impact: "Recognisable branding that builds confidence in product quality.",
+      },
+      {
+        feature: "Cost Savings",
+        impact: "Direct reduction in monthly utility expenses for households.",
+      },
+      {
+        feature: "Eco-Friendly",
+        impact: "Significant contribution to India's carbon reduction goals.",
+      },
     ],
   },
   {
@@ -243,6 +258,11 @@ export const processSteps = [
     title: "Application",
     body: "Filing, lab coordination, follow-ups with BIS / WPC / BEE / TEC and on-time delivery of your registration number.",
   },
+  {
+    step: "04",
+    title: "License Approved",
+    body: "From approval to post-certification support, we ensure your business stays compliant and ready to scale.",
+  },
 ];
 
 export const cases = [
@@ -264,10 +284,8 @@ export const cases = [
   },
   {
     client: "Industrial battery brand",
-    problem:
-      "Government tender required NABL test reports across 9 parameters within 3 weeks.",
-    action:
-      "Pre-compliance testing, NABL lab slotting and tender-grade documentation pack.",
+    problem: "Government tender required NABL test reports across 9 parameters within 3 weeks.",
+    action: "Pre-compliance testing, NABL lab slotting and tender-grade documentation pack.",
     result: "Tender qualified with zero clarifications; ₹14 Cr order awarded.",
   },
 ];
