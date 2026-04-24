@@ -21,7 +21,7 @@ export function Header() {
         <Link to="/" className="flex items-center gap-3 group">
           {/*Logo*/}
           <img
-            src="/src/images/logo/VC3.png"
+            src="/src/images/logo/VC3-Transparent.png"
             className="h-14 w-auto object-contain mix-blend-multiply"
             alt=""
           />
