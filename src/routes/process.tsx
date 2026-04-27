@@ -6,9 +6,17 @@ export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
       { title: "Our Process — Consultation, Documentation, Application | Vision" },
-      { name: "description", content: "How Vision moves your product through Indian regulatory approvals — Consultation, Documentation, Application." },
+      {
+        name: "description",
+        content:
+          "How Vision moves your product through Indian regulatory approvals — Consultation, Documentation, Application.",
+      },
       { property: "og:title", content: "Process — Vision Consultancy" },
-      { property: "og:description", content: "A three-stage workflow that gets BIS, BEE, WPC, TEC, NABL and ISO approvals across the line." },
+      {
+        property: "og:description",
+        content:
+          "A three-stage workflow that gets BIS, BEE, WPC, TEC, NABL and ISO approvals across the line.",
+      },
     ],
   }),
   component: ProcessPage,
