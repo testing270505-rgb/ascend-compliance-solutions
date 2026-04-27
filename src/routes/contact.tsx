@@ -51,7 +51,7 @@ function ContactPage() {
                 <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   Phone
                 </p>
-                <p className="mt-1 font-display text-2xl">+91 98 1000 0000</p>
+                <p className="mt-1 font-display text-2xl">+91 98 1XXX XXXX</p>
               </div>
             </div>
           </Reveal>

@@ -8,7 +8,7 @@ const links = [
   { to: "/process", label: "Process" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/about", label: "About" },
-  { to: "/blog", label: "Resources" },
+  // { to: "/blog", label: "Resources" },
 ];
 
 export function Header() {

@@ -41,11 +41,11 @@ export function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <Link to="/blog" className="hover:text-amber-glow">
-                  Resources
-                </Link>
-              </li>
+              {/*<li>*/}
+              {/*  <Link to="/blog" className="hover:text-amber-glow">*/}
+              {/*    Resources*/}
+              {/*  </Link>*/}
+              {/*</li>*/}
             </ul>
           </div>
           <div>
@@ -53,7 +53,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-paper/80">
               <li>+91 98 1000 0000</li>
               <li>support@visionconsultants.co</li>
-              <li>New Delhi · Mumbai</li>
+              <li> Mumbai · New Delhi</li>
             </ul>
             <Link
               to="/contact"

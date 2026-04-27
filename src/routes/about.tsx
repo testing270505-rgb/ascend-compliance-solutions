@@ -86,27 +86,27 @@ function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Team</p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl">Practice leads</h2>
-        <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-4">
-          {team.map((m, i) => (
-            <Reveal key={m.name} delay={i * 0.06}>
-              <div className="bg-background p-8 group hover:bg-foreground hover:text-background transition-colors min-h-55 flex flex-col justify-between">
-                <div className="h-12 w-12 rounded-full bg-saffron/20 grid place-items-center font-display text-xl text-saffron group-hover:bg-amber-glow group-hover:text-ink">
-                  {m.name.split(" ")[1]?.[0] ?? m.name[0]}
-                </div>
-                <div>
-                  <h3 className="font-display text-xl">{m.name}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground group-hover:text-paper/70">
-                    {m.role}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {/*<section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">*/}
+      {/*  <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Team</p>*/}
+      {/*  <h2 className="mt-3 font-display text-4xl md:text-5xl">Practice leads</h2>*/}
+      {/*  <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-4">*/}
+      {/*    {team.map((m, i) => (*/}
+      {/*      <Reveal key={m.name} delay={i * 0.06}>*/}
+      {/*        <div className="bg-background p-8 group hover:bg-foreground hover:text-background transition-colors min-h-55 flex flex-col justify-between">*/}
+      {/*          <div className="h-12 w-12 rounded-full bg-saffron/20 grid place-items-center font-display text-xl text-saffron group-hover:bg-amber-glow group-hover:text-ink">*/}
+      {/*            {m.name.split(" ")[1]?.[0] ?? m.name[0]}*/}
+      {/*          </div>*/}
+      {/*          <div>*/}
+      {/*            <h3 className="font-display text-xl">{m.name}</h3>*/}
+      {/*            <p className="mt-1 text-xs text-muted-foreground group-hover:text-paper/70">*/}
+      {/*              {m.role}*/}
+      {/*            </p>*/}
+      {/*          </div>*/}
+      {/*        </div>*/}
+      {/*      </Reveal>*/}
+      {/*    ))}*/}
+      {/*  </div>*/}
+      {/*</section>*/}
     </>
   );
 }
