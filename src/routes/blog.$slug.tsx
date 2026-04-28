@@ -47,7 +47,9 @@ export const Route = createFileRoute("/blog/$slug")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-4 py-32 text-center">
       <h1 className="font-display text-5xl">Article not found</h1>
-      <Link to="/blog" className="mt-6 inline-block underline-grow">Back to resources →</Link>
+      <Link to="/blog" className="mt-6 inline-block underline-grow">
+        Back to resources →
+      </Link>
     </div>
   ),
 });
@@ -56,13 +58,16 @@ function BlogPost() {
   const { post, body } = Route.useLoaderData();
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20">
-      <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        to="/blog"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft className="h-4 w-4" /> All resources
       </Link>
       <p className="mt-8 font-mono text-xs uppercase tracking-widest text-saffron">
         {post.category} · {post.read}
       </p>
-      <h1 className="mt-4 font-display text-4xl md:text-6xl font-medium leading-[1] text-balance">
+      <h1 className="mt-4 font-display text-4xl md:text-6xl font-medium leading-none text-balance">
         {post.title}
       </h1>
       <p className="mt-6 text-lg text-muted-foreground">{post.excerpt}</p>
