@@ -51,7 +51,7 @@ export function Footer() {
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-paper/50">Reach us</p>
             <ul className="mt-4 space-y-2 text-sm text-paper/80">
-              <li>+91 98 1000 0000</li>
+              {/*<li>+91 98 1000 0000</li>*/}
               <li>support@visionconsultants.co</li>
               <li> Mumbai · New Delhi</li>
             </ul>

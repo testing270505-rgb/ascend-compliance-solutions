@@ -72,18 +72,18 @@ function AboutPage() {
       </section>
 
       {/* STATS */}
-      <section className="ink-card py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="font-display text-5xl md:text-6xl text-amber-glow">
-                <Counter to={s.value} suffix={s.suffix} />
-              </p>
-              <p className="mt-2 text-xs uppercase tracking-widest text-paper/60">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/*<section className="ink-card py-20">*/}
+      {/*  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-4">*/}
+      {/*    {stats.map((s) => (*/}
+      {/*      <div key={s.label}>*/}
+      {/*        <p className="font-display text-5xl md:text-6xl text-amber-glow">*/}
+      {/*          <Counter to={s.value} suffix={s.suffix} />*/}
+      {/*        </p>*/}
+      {/*        <p className="mt-2 text-xs uppercase tracking-widest text-paper/60">{s.label}</p>*/}
+      {/*      </div>*/}
+      {/*    ))}*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* TEAM */}
       {/*<section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">*/}
