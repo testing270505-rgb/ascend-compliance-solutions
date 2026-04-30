@@ -1,7 +1,9 @@
+// src/routes/contact.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, ArrowUpRight, Loader2 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import { sendContactEmail } from "@/lib/contactFn";
 import * as React from "react";
 
 export const Route = createFileRoute("/contact")({
@@ -35,20 +37,19 @@ function ContactPage() {
     setErrorMsg("");
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const raw = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+      await sendContactEmail({
+        data: {
+          name: raw.name,
+          company: raw.company || undefined,
+          email: raw.email,
+          phone: raw.phone || undefined,
+          product: raw.product || undefined,
+          message: raw.message || undefined,
+        },
       });
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Something went wrong.");
-      }
-
       setFormState("success");
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
@@ -74,7 +75,6 @@ function ContactPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-12 lg:grid-cols-12">
-        {/* Contact info */}
         <div className="lg:col-span-4 space-y-8">
           <Reveal delay={0.05}>
             <div className="flex items-start gap-4">
@@ -101,7 +101,6 @@ function ContactPage() {
               </div>
             </div>
           </Reveal>
-
           <Reveal delay={0.15}>
             <div className="overflow-hidden rounded-xl border border-border aspect-4/3">
               <iframe
@@ -114,7 +113,6 @@ function ContactPage() {
           </Reveal>
         </div>
 
-        {/* Form */}
         <div className="lg:col-span-8">
           <Reveal>
             <form
@@ -148,7 +146,6 @@ function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Error message */}
                   {formState === "error" && <p className="mt-4 text-sm text-red-500">{errorMsg}</p>}
 
                   <button
